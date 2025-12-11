@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <QuestScriptDef>
+    <defName>Torch_GenerationalDeparture</defName>
+    <root Class="PassingTheTorch.QuestNode_Root_PassingTheTorch" />
+    <isRootSpecial>true</isRootSpecial>
+    <expireDaysRange>5~10</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Passing the Torch</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->Despite the odds, you have done it! Like a dandelion seed cast across the winds of deep space, you have lifted your small group of colonists across the stars and guided them into settling strong roots into the soil of this world. Your agriculture is stable, your walls are strong, and your people have formed a culture that can bind them together against adversity... despite their differences.
+More importantly, you have provided a secure environment for the next generation to grow up within. You came here as immmigrants, but this has always been their home. They were born on alien land, were tutored under the light of an foreign sun, and came to maturity in a harsh frontier so different from the homeworld of their forebears.
+They are more at home here than you ever will be, and it is time for them for make their own mark on this world.
+A group of ambitious young would-be settlers is looking for your blessing to pack up supplies and set out to make their own colony.
+They'll need a farewell feast of course, a chance to celebrate all your achievements and wish good fortune to the next generation's adventurers, but at the end of the night that will be goodbye.
+They promise to stay in touch, but how often do you hear the song of the bird that flees the nest?\n\nHeirs ready to depart:\n[heirList]\n\nIf accepted, a farewell party will be held, after which you will choose a new site for the heirs to settle.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+  </QuestScriptDef>
+</Defs>

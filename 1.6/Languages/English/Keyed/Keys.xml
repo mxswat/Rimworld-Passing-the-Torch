@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <Torch_LetterLabel_FarewellParty>Farewell Party</Torch_LetterLabel_FarewellParty>
+  <Torch_LetterText_FarewellParty>The heirs are celebrating before their departure. It is a time of mixed emotions, but hope shines brightest.</Torch_LetterText_FarewellParty>
+
+  <Torch_DialogTitle>Passing the Torch</Torch_DialogTitle>
+  <Torch_DialogDesc>Select items and animals for the heirs to take.</Torch_DialogDesc>
+
+  <Torch_ButtonDepart>Depart</Torch_ButtonDepart>
+
+  <Torch_LetterLabel_TransitionSuccess>The Torch is Passed</Torch_LetterLabel_TransitionSuccess>
+  <Torch_LetterText_TransitionSuccess>The elders have stayed behind to enjoy their rest. Your heirs have departed to forge a destiny of their own.</Torch_LetterText_TransitionSuccess>
+
+  <Torch_SettingMaxColonists>Max Colonists to take: {0}</Torch_SettingMaxColonists>
+  <Torch_SettingMaxAnimals>Max Animals to take: {0}</Torch_SettingMaxAnimals>
+  <Torch_SettingKeepResearch>Keep Research Progress</Torch_SettingKeepResearch>
+  <Torch_SettingKeepResearchDesc>If unchecked, all research will reset to starting tech level defaults upon departure.</Torch_SettingKeepResearchDesc>
+
+  <Torch_GoodwillLabel_SameFamily>We are from the same Family/Legacy</Torch_GoodwillLabel_SameFamily>
+</LanguageData>

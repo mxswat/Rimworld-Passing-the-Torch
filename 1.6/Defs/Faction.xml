@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FactionDef ParentName="FactionBase">
+    <defName>Torch_Ancestors</defName>
+    <label>ancestral home</label>
+    <description>The settlement of your colony's previous generation.</description>
+    <pawnSingular>ancestor</pawnSingular>
+    <pawnsPlural>ancestors</pawnsPlural>
+    <leaderTitle>elder</leaderTitle>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <listOrderPriority>100</listOrderPriority>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <permanentEnemy>false</permanentEnemy>
+    <autoFlee>true</autoFlee>
+    <canMakeRandomly>false</canMakeRandomly>
+    <humanlikeFaction>true</humanlikeFaction>
+    <techLevel>Industrial</techLevel>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <canRequestTraders>true</canRequestTraders>
+    <canRequestMilitaryAid>true</canRequestMilitaryAid>
+    <visitorTraderKinds>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Outlander_Standard</li>
+    </baseTraderKinds>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Offworld</li>
+          <li>Civil</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+  </FactionDef>
+
+  <GoodwillSituationDef>
+    <defName>Torch_AncestorsGoodwill</defName>
+    <label>ancestors</label>
+    <workerClass>PassingTheTorch.GoodwillSituationWorker_Ancestors</workerClass>
+    <baseMaxGoodwill>100</baseMaxGoodwill>
+    <naturalGoodwillOffset>40</naturalGoodwillOffset>
+  </GoodwillSituationDef>
+
+</Defs>
