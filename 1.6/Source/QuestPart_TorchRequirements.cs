@@ -14,15 +14,15 @@ namespace PassingTheTorch
         {
             var sb = new StringBuilder();
             var caravans = Find.WorldObjects.Caravans;
-            var playerCaravans = caravans.Where(c => c.IsPlayerControlled && c.pawns.Any((Pawn p) => p.Faction == Faction.OfPlayer)).ToList();
-            
-            if (playerCaravans.Any())
-            {
-                sb.AppendLine("Torch_CaravanBlockers".Translate());
-            }
+
             var heirs = PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_OfPlayerFaction
                 .Where(HeirValidator.IsValidHeir)
                 .ToList();
+
+            if (heirs.Any(x => x.GetCaravan() is not null))
+            {
+                sb.AppendLine("Torch_CaravanBlockers".Translate());
+            }
 
             var incapacitatedHeirs = heirs.Where(h => !HeirValidator.IsHeirCapable(h)).ToList();
             if (incapacitatedHeirs.Any())
