@@ -13,8 +13,6 @@ namespace PassingTheTorch
         public override AcceptanceReport CanAccept()
         {
             var sb = new StringBuilder();
-            var caravans = Find.WorldObjects.Caravans;
-
             var heirs = PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_OfPlayerFaction
                 .Where(HeirValidator.IsValidHeir)
                 .ToList();

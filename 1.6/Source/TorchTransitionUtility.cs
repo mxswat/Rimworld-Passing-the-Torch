@@ -18,7 +18,7 @@ namespace PassingTheTorch
 
             foreach (var map in allPlayerMaps)
             {
-                var things = map.listerThings.AllThings;
+                var things = map.listerThings.AllThings.ToList();
                 foreach (var thing in things)
                 {
                     var goodwillComp = thing.TryGetComp<CompDissolutionEffect_Goodwill>();
