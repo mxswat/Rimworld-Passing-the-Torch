@@ -17,4 +17,9 @@
   <Torch_SettingKeepResearchDesc>If unchecked, all research will reset to starting tech level defaults upon departure.</Torch_SettingKeepResearchDesc>
 
   <Torch_GoodwillLabel_SameFamily>We are from the same Family/Legacy</Torch_GoodwillLabel_SameFamily>
+  <Torch_CaravanBlockers>Some heirs are currently away in caravans. Wait for them to return before accepting this quest</Torch_CaravanBlockers>
+  <Torch_IncapacitatedHeirs>Some designated heirs are incapacitated. All heirs must be conscious and capable of walking</Torch_IncapacitatedHeirs>
+  <Torch_Requirements>grown up heirs in your colony.</Torch_Requirements>
+  <Reward_TorchGenerationalDeparture_Label>Generational departure</Reward_TorchGenerationalDeparture_Label>
+  <Reward_TorchGenerationalDeparture>You have successfully established a new generation that will carry on your legacy.</Reward_TorchGenerationalDeparture>
 </LanguageData>

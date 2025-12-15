@@ -70,5 +70,14 @@ namespace PassingTheTorch
 
             return false;
         }
+
+        public static bool IsHeirCapable(Pawn p)
+        {
+            if (p.Downed || p.InMentalState || !p.health.capacities.CapableOf(PawnCapacityDefOf.Moving))
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

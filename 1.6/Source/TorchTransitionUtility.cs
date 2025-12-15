@@ -16,6 +16,19 @@ namespace PassingTheTorch
             var departingItems = selectedThings.Where(t => t is not Pawn).ToList();
             var allPlayerMaps = Find.Maps.Where(m => m.IsPlayerHome).ToList();
 
+            foreach (var map in allPlayerMaps)
+            {
+                var things = map.listerThings.AllThings;
+                foreach (var thing in things)
+                {
+                    var goodwillComp = thing.TryGetComp<CompDissolutionEffect_Goodwill>();
+                    if (goodwillComp != null)
+                    {
+                        thing.Destroy();
+                    }
+                }
+            }
+
             var parms = new FactionGeneratorParms(TorchDefOf.Torch_Ancestors);
             var ancestors = FactionGenerator.NewGeneratedFaction(parms);
             ancestors.Name = Faction.OfPlayer.Name;

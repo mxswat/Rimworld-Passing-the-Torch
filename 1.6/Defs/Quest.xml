@@ -4,7 +4,6 @@
     <defName>Torch_GenerationalDeparture</defName>
     <root Class="PassingTheTorch.QuestNode_Root_PassingTheTorch" />
     <isRootSpecial>true</isRootSpecial>
-    <expireDaysRange>5~10</expireDaysRange>
     <questNameRules>
       <rulesStrings>
         <li>questName->Passing the Torch</li>
