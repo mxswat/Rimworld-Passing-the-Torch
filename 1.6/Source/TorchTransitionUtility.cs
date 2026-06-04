@@ -102,6 +102,8 @@ namespace PassingTheTorch
                 Current.Game.DeinitAndRemoveMap(map, notifyPlayer: false);
             }
 
+            CompDissolutionEffect_Goodwill.pendingGoodwillEvents.Clear();
+
             if (!PassingTheTorchMod.settings.keepResearch)
             {
                 Find.ResearchManager.ResetAllProgress();

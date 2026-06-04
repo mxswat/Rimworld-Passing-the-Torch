@@ -29,7 +29,7 @@ namespace PassingTheTorch
             organizer = candidateHeirs.FirstOrDefault(x => x.Spawned && !x.Downed && !x.InMentalState);
             if (organizer != null && RCellFinder.TryFindGatheringSpot(organizer, GatheringDefOf.Party, ignoreRequiredColonistCount: true, out var spot))
             {
-                var job = new LordJob_Joinable_Party(spot, organizer, GatheringDefOf.Party);
+                var job = new LordJob_Joinable_FarewellParty(spot, organizer, GatheringDefOf.Party);
                 var lord = LordMaker.MakeNewLord(Faction.OfPlayer, job, organizer.Map);
                 lord.AddPawn(organizer);
                 Find.LetterStack.ReceiveLetter("Torch_LetterLabel_FarewellParty".Translate(), "Torch_LetterText_FarewellParty".Translate(), LetterDefOf.PositiveEvent, new LookTargets(spot, organizer.Map));
