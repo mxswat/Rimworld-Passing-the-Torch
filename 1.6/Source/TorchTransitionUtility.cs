@@ -2,6 +2,7 @@ using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using Verse;
 
 namespace PassingTheTorch
@@ -39,6 +40,57 @@ namespace PassingTheTorch
             ancestors.hidden = false;
             Find.FactionManager.Add(ancestors);
             ancestors.TryAffectGoodwillWith(Faction.OfPlayer, 100, false, false, null, null);
+
+            foreach (var other in Find.FactionManager.AllFactionsListForReading)
+            {
+                if (other == null || other == Faction.OfPlayer || other == ancestors)
+                    continue;
+                if (other.defeated)
+                    continue;
+
+                int playerGoodwill = Faction.OfPlayer.GoodwillWith(other);
+
+                var ancestorRelation = ancestors.RelationWith(other);
+                ancestorRelation.baseGoodwill = Mathf.Clamp(playerGoodwill, -100, 100);
+                ancestorRelation.CheckKindThresholds(ancestors, false, null, GlobalTargetInfo.Invalid, out _);
+
+                var otherRelation = other.RelationWith(ancestors);
+                otherRelation.baseGoodwill = ancestorRelation.baseGoodwill;
+                otherRelation.kind = ancestorRelation.kind;
+            }
+
+            if (PassingTheTorchMod.settings.relationResetMode != TorchRelationResetMode.None)
+            {
+                foreach (var other in Find.FactionManager.AllFactionsListForReading)
+                {
+                    if (other == null || other == Faction.OfPlayer || other == ancestors)
+                        continue;
+                    if (other.defeated)
+                        continue;
+
+                    int currentGoodwill = Faction.OfPlayer.GoodwillWith(other);
+                    int targetGoodwill;
+
+                    switch (PassingTheTorchMod.settings.relationResetMode)
+                    {
+                        case TorchRelationResetMode.Neutral:
+                            targetGoodwill = 0;
+                            break;
+                        case TorchRelationResetMode.HalfStrength:
+                            targetGoodwill = Mathf.RoundToInt(currentGoodwill * 0.5f);
+                            break;
+                        default:
+                            targetGoodwill = currentGoodwill;
+                            break;
+                    }
+
+                    int delta = targetGoodwill - currentGoodwill;
+                    if (delta != 0)
+                    {
+                        Faction.OfPlayer.TryAffectGoodwillWith(other, delta, false, false, null, null);
+                    }
+                }
+            }
 
             var stayingPawns = new List<Pawn>();
             foreach (var map in allPlayerMaps)

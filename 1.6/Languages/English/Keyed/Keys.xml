@@ -22,4 +22,13 @@
   <Torch_Requirements>grown up heirs in your colony.</Torch_Requirements>
   <Reward_TorchGenerationalDeparture_Label>Generational departure</Reward_TorchGenerationalDeparture_Label>
   <Reward_TorchGenerationalDeparture>You have successfully established a new generation that will carry on your legacy.</Reward_TorchGenerationalDeparture>
+
+  <Torch_SettingRelationReset>Diplomacy on departure</Torch_SettingRelationReset>
+  <Torch_SettingRelationResetDesc>How the new colony's relations with other factions are handled after the torch is passed. The ancestral home always keeps its inherited relations.</Torch_SettingRelationResetDesc>
+  <Torch_RelationReset_None>Keep all</Torch_RelationReset_None>
+  <Torch_RelationReset_Neutral>Reset to neutral</Torch_RelationReset_Neutral>
+  <Torch_RelationReset_HalfStrength>Half strength</Torch_RelationReset_HalfStrength>
+  <Torch_RelationReset_None_Desc>All existing relations are preserved. Allies stay allies, enemies stay enemies.</Torch_RelationReset_None_Desc>
+  <Torch_RelationReset_Neutral_Desc>Sets goodwill with all other factions to 0 (neutral). The new colony starts fresh diplomatically; only the ancestral home keeps +100 goodwill.</Torch_RelationReset_Neutral_Desc>
+  <Torch_RelationReset_HalfStrength_Desc>Goodwill is halved. A +100 ally becomes +50 (friendly, not allied), a -80 enemy becomes -40 (neutral-ish).</Torch_RelationReset_HalfStrength_Desc>
 </LanguageData>

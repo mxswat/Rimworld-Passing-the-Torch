@@ -28,6 +28,17 @@ namespace PassingTheTorch
             listing.Gap();
             listing.CheckboxLabeled("Torch_SettingKeepResearch".Translate(), ref settings.keepResearch, "Torch_SettingKeepResearchDesc".Translate());
 
+            listing.Gap();
+            Text.Font = GameFont.Tiny;
+            listing.Label(("Torch_RelationReset_" + settings.relationResetMode + "_Desc").Translate());
+            Text.Font = GameFont.Small;
+            if (listing.ButtonText("Torch_SettingRelationReset".Translate() + ": " + ("Torch_RelationReset_" + settings.relationResetMode).Translate()))
+            {
+                var values = System.Enum.GetValues(typeof(TorchRelationResetMode));
+                var currentIndex = System.Array.IndexOf(values, settings.relationResetMode);
+                settings.relationResetMode = (TorchRelationResetMode)values.GetValue((currentIndex + 1) % values.Length);
+            }
+
             listing.End();
         }
 
