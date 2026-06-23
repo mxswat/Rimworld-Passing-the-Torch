@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <FactionDef ParentName="FactionBase">
-    <defName>Torch_Ancestors</defName>
+  <FactionDef ParentName="FactionBase" Name="Torch_AncestorsBase" Abstract="True">
     <label>ancestral home</label>
     <description>The settlement of your colony's previous generation.</description>
     <pawnSingular>ancestor</pawnSingular>
@@ -17,11 +16,81 @@
     <autoFlee>true</autoFlee>
     <canMakeRandomly>false</canMakeRandomly>
     <humanlikeFaction>true</humanlikeFaction>
-    <techLevel>Industrial</techLevel>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
     <canRequestTraders>true</canRequestTraders>
     <canRequestMilitaryAid>true</canRequestMilitaryAid>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Offworld</li>
+          <li>Civil</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+  </FactionDef>
+
+  <FactionDef ParentName="Torch_AncestorsBase">
+    <defName>Torch_Ancestors_Neolithic</defName>
+    <techLevel>Neolithic</techLevel>
+    <visitorTraderKinds>
+      <li>Visitor_Neolithic_Standard</li>
+    </visitorTraderKinds>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Neolithic_ShamanMerchant</li>
+    </caravanTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Neolithic_Standard</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Tribal_Warrior>1</Tribal_Warrior>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="Torch_AncestorsBase">
+    <defName>Torch_Ancestors_Medieval</defName>
+    <techLevel>Medieval</techLevel>
+    <visitorTraderKinds>
+      <li>Visitor_Neolithic_Standard</li>
+    </visitorTraderKinds>
+    <caravanTraderKinds>
+      <li>Caravan_Neolithic_BulkGoods</li>
+      <li>Caravan_Neolithic_WarMerchant</li>
+      <li>Caravan_Neolithic_Slaver</li>
+      <li>Caravan_Neolithic_ShamanMerchant</li>
+    </caravanTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Neolithic_Standard</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Tribal_Warrior>1</Tribal_Warrior>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Tribal_Warrior>1</Tribal_Warrior>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="Torch_AncestorsBase">
+    <defName>Torch_Ancestors_Industrial</defName>
+    <techLevel>Industrial</techLevel>
     <visitorTraderKinds>
       <li>Visitor_Outlander_Standard</li>
     </visitorTraderKinds>
@@ -33,14 +102,62 @@
     <baseTraderKinds>
       <li>Base_Outlander_Standard</li>
     </baseTraderKinds>
-    <backstoryFilters>
+    <pawnGroupMakers>
       <li>
-        <categories>
-          <li>Offworld</li>
-          <li>Civil</li>
-        </categories>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Villager>1</Villager>
+        </options>
       </li>
-    </backstoryFilters>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="Torch_AncestorsBase">
+    <defName>Torch_Ancestors_Spacer</defName>
+    <techLevel>Spacer</techLevel>
+    <visitorTraderKinds>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Outlander_Standard</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Villager>1</Villager>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+
+  <FactionDef ParentName="Torch_AncestorsBase">
+    <defName>Torch_Ancestors_Ultra</defName>
+    <techLevel>Ultra</techLevel>
+    <visitorTraderKinds>
+      <li>Visitor_Outlander_Standard</li>
+    </visitorTraderKinds>
+    <caravanTraderKinds>
+      <li>Caravan_Outlander_BulkGoods</li>
+      <li>Caravan_Outlander_CombatSupplier</li>
+      <li>Caravan_Outlander_Exotic</li>
+    </caravanTraderKinds>
+    <baseTraderKinds>
+      <li>Base_Outlander_Standard</li>
+    </baseTraderKinds>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Peaceful</kindDef>
+        <options>
+          <Villager>1</Villager>
+        </options>
+      </li>
+    </pawnGroupMakers>
   </FactionDef>
 
   <GoodwillSituationDef>

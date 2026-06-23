@@ -31,11 +31,11 @@ namespace PassingTheTorch
             {
                 return false;
             }
-            if (a.def == TorchDefOf.Torch_Ancestors && b.IsPlayer)
+            if (a.def.defName.StartsWith("Torch_Ancestors") && b.IsPlayer)
             {
                 return true;
             }
-            return b.def == TorchDefOf.Torch_Ancestors && a.IsPlayer;
+            return b.def.defName.StartsWith("Torch_Ancestors") && a.IsPlayer;
         }
     }
 }

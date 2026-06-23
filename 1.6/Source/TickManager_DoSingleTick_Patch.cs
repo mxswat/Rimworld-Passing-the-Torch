@@ -24,6 +24,7 @@ namespace PassingTheTorch
             int validHeirs = PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_OfPlayerFaction.Count(HeirValidator.IsValidHeir);
             if (validHeirs >= 3)
             {
+                Log.Message($"[PassingTheTorch] {validHeirs} valid heirs found, generating quest");
                 var slate = new Slate();
                 var quest = QuestUtility.GenerateQuestAndMakeAvailable(TorchDefOf.Torch_GenerationalDeparture, slate);
                 QuestUtility.SendLetterQuestAvailable(quest);

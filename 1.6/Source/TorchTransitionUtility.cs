@@ -30,7 +30,7 @@ namespace PassingTheTorch
                 }
             }
 
-            var parms = new FactionGeneratorParms(TorchDefOf.Torch_Ancestors);
+            var parms = new FactionGeneratorParms(GetFactionDefForAncestors());
             var ancestors = FactionGenerator.NewGeneratedFaction(parms);
             ancestors.Name = Faction.OfPlayer.Name;
             if (ancestors.ideos != null && Faction.OfPlayer.ideos.PrimaryIdeo != null)
@@ -40,6 +40,7 @@ namespace PassingTheTorch
             ancestors.hidden = false;
             Find.FactionManager.Add(ancestors);
             ancestors.TryAffectGoodwillWith(Faction.OfPlayer, 100, false, false, null, null);
+            Log.Message($"[PassingTheTorch] Created ancestral home with def: {ancestors.def.defName}, techLevel: {ancestors.def.techLevel}");
 
             foreach (var other in Find.FactionManager.AllFactionsListForReading)
             {
@@ -90,6 +91,7 @@ namespace PassingTheTorch
                         Faction.OfPlayer.TryAffectGoodwillWith(other, delta, false, false, null, null);
                     }
                 }
+                Log.Message($"[PassingTheTorch] Player diplomacy reset mode: {PassingTheTorchMod.settings.relationResetMode}");
             }
 
             var stayingPawns = new List<Pawn>();
@@ -204,6 +206,31 @@ namespace PassingTheTorch
 
             Find.LetterStack.ReceiveLetter("Torch_LetterLabel_TransitionSuccess".Translate(), "Torch_LetterText_TransitionSuccess".Translate(),
                 LetterDefOf.PositiveEvent, departingPawns.FirstOrDefault());
+        }
+
+        private static FactionDef GetFactionDefForAncestors()
+        {
+            static int CountFinished(TechLevel level) =>
+                DefDatabase<ResearchProjectDef>.AllDefsListForReading
+                    .Count(p => p.techLevel == level && p.IsFinished);
+
+            TechLevel floor = Faction.OfPlayer.def.techLevel;
+
+            TechLevel best = floor;
+            if (CountFinished(TechLevel.Ultra) >= 2) best = TechLevel.Ultra;
+            else if (CountFinished(TechLevel.Spacer) >= 5) best = TechLevel.Spacer;
+            else if (CountFinished(TechLevel.Industrial) >= 5) best = TechLevel.Industrial;
+            else if (CountFinished(TechLevel.Medieval) >= 5) best = TechLevel.Medieval;
+            best = (TechLevel)Mathf.Max((int)best, (int)floor);
+
+            return best switch
+            {
+                TechLevel.Ultra => TorchDefOf.Torch_Ancestors_Ultra,
+                TechLevel.Spacer => TorchDefOf.Torch_Ancestors_Spacer,
+                TechLevel.Industrial => TorchDefOf.Torch_Ancestors_Industrial,
+                TechLevel.Medieval => TorchDefOf.Torch_Ancestors_Medieval,
+                _ => TorchDefOf.Torch_Ancestors_Industrial,
+            };
         }
     }
 }
