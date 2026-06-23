@@ -27,20 +27,25 @@ namespace PassingTheTorch
             if (parms?.faction == null || !parms.faction.def.defName.StartsWith("Torch_Ancestors"))
                 return;
 
-            var elders = PawnsFinder.AllMapsWorldAndTemporary_Alive
-                .Where(p => p.Faction == parms.faction && !p.Dead && !p.Destroyed && !p.Spawned && p.IsWorldPawn())
+            var generated = __result.ToList();
+            var allWorldPawns = Find.WorldPawns.AllPawnsAlive.ToList();
+            var elders = allWorldPawns
+                .Where(p => p.Faction == parms.faction && p.RaceProps.Humanlike && !p.Dead && !p.Destroyed && !p.Spawned && p.IsWorldPawn())
                 .ToList();
 
             if (!elders.Any())
                 return;
 
-            var generated = __result.ToList();
-            int replaceCount = Mathf.Min(elders.Count, generated.Count);
+            int startIndex = (parms.groupKind == PawnGroupKindDefOf.Trader) ? 1 : 0;
+            int replaceCount = Mathf.Min(elders.Count, generated.Count - startIndex);
+
+            if (replaceCount <= 0)
+                return;
 
             for (int i = 0; i < replaceCount; i++)
             {
                 Find.WorldPawns.RemovePawn(elders[i]);
-                generated[i] = elders[i];
+                generated[startIndex + i] = elders[i];
             }
 
             __result = generated;

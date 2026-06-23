@@ -100,14 +100,19 @@ namespace PassingTheTorch
                 stayingPawns.AddRange(map.mapPawns.FreeColonists.Where(p => !departingPawns.Contains(p)));
             }
             var playerSettlements = Find.WorldObjects.Settlements.Where(s => s.Faction == Faction.OfPlayer).ToList();
-            var playerSettlementTileIDs = playerSettlements.Select(s => s.Tile).ToList();
-            var playerSettlementNames = playerSettlements.Select(s => s.Label).ToList();
 
             if (playerSettlements.Count == 0)
             {
                 Log.Error("No player settlements found for torch transition");
                 return;
             }
+
+            foreach (var s in playerSettlements)
+            {
+                s.SetFaction(ancestors);
+                s.cachedMat = null;
+            }
+
             foreach (var p in stayingPawns)
             {
                 if (p.Faction == Faction.OfPlayer)
@@ -162,17 +167,6 @@ namespace PassingTheTorch
             {
                 Find.ResearchManager.ResetAllProgress();
                 ResearchUtility.ApplyPlayerStartingResearch();
-            }
-            for (int i = 0; i < playerSettlementTileIDs.Count; i++)
-            {
-                var tileIDToUse = playerSettlementTileIDs[i];
-                string settlementName = playerSettlementNames[i];
-
-                var ancestorSettlement = (Settlement)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Settlement);
-                ancestorSettlement.SetFaction(ancestors);
-                ancestorSettlement.Tile = tileIDToUse;
-                ancestorSettlement.Name = settlementName;
-                Find.WorldObjects.Add(ancestorSettlement);
             }
 
             var newSettlement = (Settlement)WorldObjectMaker.MakeWorldObject(WorldObjectDefOf.Settlement);

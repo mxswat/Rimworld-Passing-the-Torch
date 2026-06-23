@@ -70,6 +70,19 @@
           <Tribal_Hunter>10</Tribal_Hunter>
         </options>
       </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Tribal_Trader>1</Tribal_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>3</Muffalo>
+        </carriers>
+        <guards>
+          <Tribal_Warrior>3</Tribal_Warrior>
+          <Tribal_Archer>3</Tribal_Archer>
+        </guards>
+      </li>
     </pawnGroupMakers>
   </FactionDef>
 
@@ -102,6 +115,19 @@
           <Tribal_Archer>10</Tribal_Archer>
           <Tribal_Hunter>10</Tribal_Hunter>
         </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Tribal_Trader>1</Tribal_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>3</Muffalo>
+        </carriers>
+        <guards>
+          <Tribal_Warrior>3</Tribal_Warrior>
+          <Tribal_Archer>3</Tribal_Archer>
+        </guards>
       </li>
     </pawnGroupMakers>
   </FactionDef>
@@ -136,6 +162,19 @@
           <Mercenary_Slasher>7</Mercenary_Slasher>
         </options>
       </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Town_Trader>1</Town_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>3</Muffalo>
+        </carriers>
+        <guards>
+          <Villager>3</Villager>
+          <Town_Guard>3</Town_Guard>
+        </guards>
+      </li>
     </pawnGroupMakers>
   </FactionDef>
 
@@ -169,6 +208,19 @@
           <Mercenary_Slasher>7</Mercenary_Slasher>
         </options>
       </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Town_Trader>1</Town_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>3</Muffalo>
+        </carriers>
+        <guards>
+          <Villager>3</Villager>
+          <Town_Guard>3</Town_Guard>
+        </guards>
+      </li>
     </pawnGroupMakers>
   </FactionDef>
 
@@ -201,6 +253,19 @@
           <Mercenary_Gunner>7</Mercenary_Gunner>
           <Mercenary_Slasher>7</Mercenary_Slasher>
         </options>
+      </li>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Town_Trader>1</Town_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>3</Muffalo>
+        </carriers>
+        <guards>
+          <Villager>3</Villager>
+          <Town_Guard>3</Town_Guard>
+        </guards>
       </li>
     </pawnGroupMakers>
   </FactionDef>
