@@ -38,7 +38,7 @@ It effectively gives you a **New Game+** experience: carry your best pawns, rese
 
 - The Ancestral Home uses outlander-style trading, backstories, and settlement generation. It retains the player's former ideology and faction name.
 - The departing pawns' old settlements and maps are fully removed from the world.
-- If you revisit or attack the ancestral home, a fresh settlement map is generated from scratch (same limitation as vanilla Archonexus). The player-built structures and the elders left behind do not appear on the map.
+- If you revisit or attack the ancestral home, a fresh settlement map is generated from scratch (same limitation as vanilla Archonexus). The player-built structures are not preserved, but the elders left behind will appear as defenders.
 - Heirs who have already departed (tracked via `TorchWorldComponent`) cannot be selected again.
 - If all heirs are incapacitated or away in caravans, the quest will not allow acceptance.
 

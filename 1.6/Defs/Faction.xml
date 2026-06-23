@@ -16,6 +16,16 @@
     <autoFlee>true</autoFlee>
     <canMakeRandomly>false</canMakeRandomly>
     <humanlikeFaction>true</humanlikeFaction>
+    <hidden>true</hidden>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
     <factionNameMaker>NamerFactionOutlander</factionNameMaker>
     <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
     <canRequestTraders>true</canRequestTraders>
@@ -52,6 +62,14 @@
           <Tribal_Warrior>1</Tribal_Warrior>
         </options>
       </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
+        </options>
+      </li>
     </pawnGroupMakers>
   </FactionDef>
 
@@ -77,12 +95,12 @@
           <Tribal_Warrior>1</Tribal_Warrior>
         </options>
       </li>
-    </pawnGroupMakers>
-    <pawnGroupMakers>
       <li>
-        <kindDef>Peaceful</kindDef>
+        <kindDef>Settlement</kindDef>
         <options>
-          <Tribal_Warrior>1</Tribal_Warrior>
+          <Tribal_Warrior>7</Tribal_Warrior>
+          <Tribal_Archer>10</Tribal_Archer>
+          <Tribal_Hunter>10</Tribal_Hunter>
         </options>
       </li>
     </pawnGroupMakers>
@@ -109,6 +127,15 @@
           <Villager>1</Villager>
         </options>
       </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Villager>10</Villager>
+          <Town_Guard>10</Town_Guard>
+          <Mercenary_Gunner>7</Mercenary_Gunner>
+          <Mercenary_Slasher>7</Mercenary_Slasher>
+        </options>
+      </li>
     </pawnGroupMakers>
   </FactionDef>
 
@@ -133,6 +160,15 @@
           <Villager>1</Villager>
         </options>
       </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Villager>10</Villager>
+          <Town_Guard>10</Town_Guard>
+          <Mercenary_Gunner>7</Mercenary_Gunner>
+          <Mercenary_Slasher>7</Mercenary_Slasher>
+        </options>
+      </li>
     </pawnGroupMakers>
   </FactionDef>
 
@@ -155,6 +191,15 @@
         <kindDef>Peaceful</kindDef>
         <options>
           <Villager>1</Villager>
+        </options>
+      </li>
+      <li>
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Villager>10</Villager>
+          <Town_Guard>10</Town_Guard>
+          <Mercenary_Gunner>7</Mercenary_Gunner>
+          <Mercenary_Slasher>7</Mercenary_Slasher>
         </options>
       </li>
     </pawnGroupMakers>
