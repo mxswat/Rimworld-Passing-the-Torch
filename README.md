@@ -2,6 +2,8 @@
 
 A generational RimWorld ending inspired by the Archonexus finale. When your colony has raised at least three grown-up heirs, a quest fires: organize a farewell party, pack supplies, and send a new generation to found their own colony on a new tile. The original settlement becomes an independent NPC faction, the Ancestral Home, that remembers your legacy.
 
+It effectively gives you a **New Game+** experience: carry your best pawns, research, and supplies into a fresh map while the elders' legacy lives on as a new faction in the world.
+
 ## Features
 
 - **Quest-driven departure.** Once 3+ valid heirs exist, the "Passing the Torch" quest becomes available. Heirs are adults with `AdultColonist` / `AdultTribal` / `VatGrown` backstories who have not already departed.
