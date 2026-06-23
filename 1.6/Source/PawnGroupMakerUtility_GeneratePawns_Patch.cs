@@ -27,6 +27,9 @@ namespace PassingTheTorch
             if (parms?.faction == null || !parms.faction.def.defName.StartsWith("Torch_Ancestors"))
                 return;
 
+            if (parms.groupKind != PawnGroupKindDefOf.Settlement)
+                return;
+
             var generated = __result.ToList();
             var allWorldPawns = Find.WorldPawns.AllPawnsAlive.ToList();
             var elders = allWorldPawns
@@ -34,18 +37,21 @@ namespace PassingTheTorch
                 .ToList();
 
             if (!elders.Any())
+            {
+                Log.Message($"[PassingTheTorch] No elders found in world pawns for {parms.faction.Name}. World pawn count: {allWorldPawns.Count}");
                 return;
+            }
 
-            int startIndex = (parms.groupKind == PawnGroupKindDefOf.Trader) ? 1 : 0;
-            int replaceCount = Mathf.Min(elders.Count, generated.Count - startIndex);
-
+            int replaceCount = Mathf.Min(elders.Count, generated.Count);
             if (replaceCount <= 0)
                 return;
 
+            Log.Message($"[PassingTheTorch] Replacing {replaceCount} of {generated.Count} generated pawns with elders from world pawns");
             for (int i = 0; i < replaceCount; i++)
             {
                 Find.WorldPawns.RemovePawn(elders[i]);
-                generated[startIndex + i] = elders[i];
+                Log.Message($"[PassingTheTorch] Spawning elder {elders[i].NameShortColored}");
+                generated[i] = elders[i];
             }
 
             __result = generated;
